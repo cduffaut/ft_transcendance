@@ -1,0 +1,42 @@
+{% extends "html/header.html" %}
+{% load static %}
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'dashboard.css' %}" />
+<div class="image-container">
+    <img src="https://e1.pxfuel.com/desktop-wallpaper/281/253/desktop-wallpaper-best-6-80s-backgrounds-on-hip-retro-80s.jpg"
+        alt="Votre image" style="width:100%;
+                    height:100%;
+                    object-fit: cover" />
+</div>
+<div class="frame">
+    <div class="tab-container">
+        <a href="{% url 'account_information' %}" class="tab">Account Information</a>
+        <a href="{% url 'user_dashboard' %}" class="tab active">Dashboard</a>
+        <a href="{% url 'social_management' %}" class="tab">Social Management</a>
+    </div>
+    <div class="profile-section">
+        <div>
+            <img src="" class="profile-pic" id="profile-pic"></img>
+        </div>
+        <!-- S'assurez que cet élément a un background-image par défaut ou via JS -->
+        <div class="profile-name" id="username">{{ user.username }}</div>
+        <div class="statistic">
+            Win rate : <span>{{ ratio_w }}%</span>
+        </div>
+        <div class="statistic">
+            Games won : <span>{{ user.wins }}</span>
+        </div>
+        <div class="statistic">
+            Games lost : <span>{{ losses }}</span>
+        </div>
+        <div class="GameHistory">History of games</div>
+        <div class="scroll-container">
+        </div>
+    </div>
+
+    <script src={% static 'utils.js' %}></script>
+    <script src={% static 'dashboard.js' %}></script>
+</div>
+{% endblock content %}

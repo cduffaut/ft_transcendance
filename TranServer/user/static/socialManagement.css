@@ -1,0 +1,599 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://e1.pxfuel.com/desktop-wallpaper/281/253/desktop-wallpaper-best-6-80s-backgrounds-on-hip-retro-80s.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-family: "Roboto", sans-serif;
+  color: #ffff99;
+  font-size: 47px;
+}
+
+.logo {
+  text-decoration: none;
+  color: #ffff99;
+  font-size: 47px;
+}
+
+.additional-links ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+}
+
+.additional-links ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.additional-links ul li a.profile {
+  color: #ffff99;
+}
+
+.content {
+  position: relative;
+  padding: 50px;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+}
+
+.title-container {
+  margin-bottom: 40px;
+}
+
+.title-container h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 60px;
+  margin: 0;
+}
+
+.separator-line {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  margin: 20px 0;
+}
+
+.select-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.select-text select,
+.select-text .slider {
+  margin: 0 10px;
+  font-size: 18px;
+  background-color: #ffff99;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: black;
+}
+
+.slider {
+  width: 50%;
+}
+
+.create-button {
+  padding: 20px 25px;
+  background-color: #ffff99;
+  color: #333;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.create-button:hover,
+.create-button:focus {
+  background-color: #cccc00;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.exit-link {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.frame {
+  position: fixed;
+  top: 15%;
+  left: 1%;
+  width: 98%;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  display: flex;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.tab-container {
+  width: 15%;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 20px;
+  gap: 10px;
+  border-right: 2px solid #ccc;
+}
+
+.tab {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 5px;
+  color: #ffff99;
+  background-color: #ddd;
+  font-weight: 700;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab.active {
+  background-color: #000000;
+  color: #fff;
+}
+
+.tab:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.tab:last-of-type {
+  border-bottom: none;
+}
+
+.tab a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.tab:hover,
+.tab.active,
+.tab:focus {
+  transform: translateY(-2px);
+}
+
+.content-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.search-area {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+  margin-bottom: 20px;
+}
+
+.search-selection {
+  width: 100%;
+}
+
+.search-box {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.user-list {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.user-list li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 0;
+}
+
+.user-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin-right: 5px;
+  background-size: cover;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.user-photo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.username {
+  margin-left: 10px;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  right: 5px;
+  bottom: 0;
+  background-color: red;
+  z-index: 2;
+}
+
+.search-area button,
+.block-button {
+  padding: 8px 15px;
+  border: none;
+  background-color: #333;
+  color: #ffffe0;
+  margin-left: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-link {
+  padding: 8px 24px;
+  background-color: #333;
+  color: #ffffe0;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.edit-link:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+body {
+  background-image: url("https://e1.pxfuel.com/desktop-wallpaper/281/253/desktop-wallpaper-best-6-80s-backgrounds-on-hip-retro-80s.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://e1.pxfuel.com/desktop-wallpaper/281/253/desktop-wallpaper-best-6-80s-backgrounds-on-hip-retro-80s.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+
+.block-button {
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.block-button:hover {
+  background-color: #367c39;
+}
+
+header {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+}
+
+.sections-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.sections-container>section {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: 400px;
+  min-width: 250px;
+}
+
+@media (max-width: 800px) {
+  .sections-container {
+    flex-direction: column;
+  }
+
+  .sections-container>section {
+    margin: 10px 0;
+    width: 100%;
+  }
+}
+
+.button {
+  padding: 8px 15px;
+  font-size: 14px;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.remove-button {
+  background-color: #ff6347;
+}
+
+.remove-button:hover,
+.remove-button:focus {
+  background-color: #e5533d;
+  transform: translateY(-2px);
+}
+
+.request-sent-button {
+  background-color: #ffd700;
+}
+
+.request-sent-button:hover,
+.request-sent-button:focus {
+  background-color: #e6c300;
+}
+
+.unblock-button {
+  background-color: #32cd32;
+}
+
+.unblock-button:hover,
+.unblock-button:focus {
+  background-color: #2ab82a;
+  transform: translateY(-2px);
+}
+
+.user-info .button {
+  margin-left: 20px;
+}
+
+.profile-btn {
+  background-color: #ffff99;
+  color: black !important;
+  padding: 12px 24px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.profile-btn:hover {
+  background-color: #e6c300;
+  color: black !important;
+  transform: scale(1.05);
+}
+
+.button.user-button {
+  background-color: #8a2be2;
+  color: white;
+}
+
+.button.user-button:hover {
+  background-color: #7b26d9;
+}
+
+.waiting-approval-section .approve-button,
+.waiting-approval-section .decline-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.waiting-approval-section .approve-button:hover,
+.waiting-approval-section .decline-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.autocomplete-dropdown {
+  position: absolute;
+  width: 100%;
+  background-color: #f1f1f1;
+  z-index: 1;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.autocomplete-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-item:hover {
+  background-color: #ddd;
+}
+
+#error_message {
+  color: red;
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+header .game-button {
+  background-color: transparent !important;
+  color: white !important;
+  transition: background-color 0.3s;
+}
+
+.game-button:hover {
+  background-color: #444;
+}
+
+@media (max-width: 768px) {
+  header div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  header a.header-btn,
+  header a.game-button {
+    font-size: 18px;
+    padding: 8px 10px;
+    margin: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  header div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header a.header-btn,
+  header a.game-button {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+}
+
+#accountInfoLink {
+  color: black;
+}

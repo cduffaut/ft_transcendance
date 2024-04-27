@@ -1,0 +1,91 @@
+{% extends 'html/header.html' %}
+{% load static %}
+
+{% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+<style rel="stylesheet" href="{% static 'pong.css' %}"></style>
+<style>
+    body {
+        display: flex;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #000;
+    }
+
+    canvas {
+        background: #000;
+    }
+
+    #gameContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .popup {
+        display: flex;
+        font-weight: bold;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60vw;
+        max-width: 600px;
+        height: 30vw;
+        max-height: 300px;
+        padding: 20px;
+        color: white;
+        font-size: 2.em;
+        background-color: rgba(104, 104, 104, 0.74);
+        border: 2px solid #FFFF99;
+        border-radius: 10px;
+        z-index: 1000;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .centered-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .popup p {
+        margin: 0;
+    }
+</style>
+<div id="content-container-replace">
+    <div data-gameSettings="{{ contexte_json }}" id="gameSettings"></div>
+    <div class="pong-page">
+        <div id="gameContainer">
+            <!-- Le scoreboard sera ajouté dynamiquement ici -->
+            <canvas id="pongCanvas"></canvas>
+        </div>
+        <div id="waitingScreen" class="popup" style="display: none;">
+            <div class="centered-content">
+                <p id="waitingMessage">Waiting for players...</p>
+            </div>
+        </div>
+        <div id="endGameScreen" class="popup" style="display: none;">
+            <div class="centered-content">
+                <p id="winnerText"></p>
+                <p id="scoreText"></p>
+            </div>
+        </div>
+        <script src="{% static 'js/pong.js' %}"></script>
+        <script src="{% static 'utils.js' %}"></script>
+    </div>
+</div>
+{% endblock %}

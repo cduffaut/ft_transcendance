@@ -1,0 +1,35 @@
+{% extends "html/header.html" %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'profile_user.css' %}" />
+    <div class="image-container">
+        <img src="https://e1.pxfuel.com/desktop-wallpaper/281/253/desktop-wallpaper-best-6-80s-backgrounds-on-hip-retro-80s.jpg"
+             alt="Votre image"
+             style="width:100%;
+                    height:100%;
+                    object-fit: cover" />
+    </div>
+    <div class="frame">
+        <h2 class="frame-title">User Profile</h2>
+        <div class="profile-section">
+            <div class="profile-pic-container">
+                <img src="" class="profile-pic" id="profile-pic">
+            </img>
+            <div class="online-indicator" id="indicator"></div>
+        </div>
+        <div class="profile-name" id="username">{{ user.username }}</div>
+        <div class="statistic">
+            Win rate : <span>{{ ratio_w }}%</span><span class="progress-bar" style="width: {{ ratio_w }}%;">{{ ratio_w }}%</span>
+        </div>
+        <div class="statistic">
+            Games won : <span>{{ user.wins }}</span><span class="progress-bar" style="width: {{ ratio_w }}%;">{{ user.wins }}</span>
+        </div>
+        <div class="statistic">
+            Games lost : <span>{{ losses }}</span><span class="progress-bar"
+      style="width: {{ ratio_l }}%;
+             background-color: #f44336">{{ losses }}</span>
+        </div>
+    </div>
+</div>
+<script src="{% static 'profile_user.js' %}"></script>
+{% endblock content %}

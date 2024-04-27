@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <style></style>
+</head>
+
+<body>
+    <div id="content-container-replace">
+        <link rel="stylesheet" href="{% static 'email_sent.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+        <div class="forgot-password-frame">
+            <h2>We've just sent you an email!</h2>
+            <label for="email">Please check your mail box.</label>
+            <img src="https://media.tenor.com/0cvxil96K7YAAAAi/check.gif" alt="Loading..." class="password-reset-gif">
+            <script src="{% static 'utils.js' %}"></script>
+        </div>
+    </div>
+</body>
+
+</html>

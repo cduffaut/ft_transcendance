@@ -1,0 +1,172 @@
+    /* Ajout de la police d'écriture Lato pour une meilleure lisibilité */
+    body,
+    input,
+    button,
+    #register-link {
+        font-family: 'Montserrat', sans-serif;
+        /* Remplace 'Roboto' et 'Arial' */
+    }
+
+    #title {
+        text-align: center;
+        color: #FFFF99;
+        font-size: 135px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
+        /* Effet d'ombre */
+        margin-bottom: 20px;
+        /* Espace réduit pour monter le texte */
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+        /* Utilisation de la police Montserrat */
+        position: absolute;
+        /* Position absolue pour mettre en premier plan */
+        top: 20px;
+        /* Légèrement déplacé vers le bas */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        /* Mettre en premier plan */
+    }
+
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-image: url('https://e1.pxfuel.com/desktop-wallpaper/281/253/desktop-wallpaper-best-6-80s-backgrounds-on-hip-retro-80s.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        /* Ajout de position relative pour le conteneur de l'effet vignette */
+    }
+
+    /* Effet vignette */
+    /* Effet noir et blanc au-dessus de l'image de fond */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Utilisation de la même image de fond que le body */
+        background-image: url('https://e1.pxfuel.com/desktop-wallpaper/281/253/desktop-wallpaper-best-6-80s-backgrounds-on-hip-retro-80s.jpg');
+        background-size: cover;
+        background-position: center;
+        filter: grayscale(100%);
+        /* Convertir en noir et blanc */
+        z-index: 0;
+        /* Placer en-dessous de tout le reste */
+    }
+
+    #login-container {
+        width: max-content;
+        padding: 30px;
+        /* Légèrement réduit */
+        border: 2px solid #000;
+        border-radius: 15px;
+        /* Légèrement réduit */
+        background-color: #383535b9;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.8);
+        margin-bottom: 200px;
+        /* Descendu légèrement plus bas */
+        height: 50vh;
+        /* Modifié la hauteur */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: rgb(234, 230, 230);
+        font-weight: bold;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        margin-top: 230px;
+        /* Augmenter cette valeur pour déplacer le cadre vers le bas */
+        position: relative;
+        /* Ajout de position relative pour permettre le positionnement de l'élément */
+        z-index: 1;
+        /* Assurer que le contenu est au-dessus de l'effet vignette mais derrière le texte "TRANSCENDANCE" */
+        text-align: center;
+        /* Centrer le contenu horizontalement */
+    }
+
+    .split-text {
+        margin-bottom: 20px;
+        /* Espacement ajusté */
+    }
+
+    .split-text span {
+        display: block;
+        text-align: center;
+    }
+
+    .welcome-text {
+        font-size: 70px;
+        /* Taille pour "Welcome!" */
+    }
+
+    .split-text span:not(.welcome-text) {
+        font-size: 45px;
+        /* Taille réduite pour "Please login or register" */
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        font-size: 18px;
+        border-radius: 5px;
+        /* Bordures ajustées */
+    }
+
+    button {
+        width: 150px;
+        /* Ajustez la largeur selon vos préférences */
+        padding: 12px;
+        /* Réduire la taille du padding */
+        background-color: #FFFF99;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: bold;
+        transition: background-color 0.5s ease, transform 0.5s ease;
+        margin-top: 30px;
+    }
+
+
+    button:hover,
+    button:focus {
+        background-color: #e7e735;
+        transform: scale(1.1);
+    }
+
+    #register-link {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        margin-top: 15px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        font-weight: normal;
+    }
+
+    #forgot-password-link {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.667);
+        font-style: italic;
+        font-size: 13px;
+        text-align: center;
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+    }

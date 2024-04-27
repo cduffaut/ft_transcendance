@@ -1,0 +1,308 @@
+body {
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f0f0f0;
+}
+
+.vignette {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.image-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: grayscale(100%);
+}
+
+.image-container::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	/* Opacité réglable */
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.596);
+	color: #FFFFE0;
+	z-index: 10;
+	padding: 20px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-btn {
+	background: none;
+	border: none;
+	color: #FFFFE0;
+	font-family: 'Poppins', sans-serif;
+	font-size: 20px;
+	cursor: pointer;
+	padding: 12px 20px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+
+.profile-btn {
+	background-color: #FFFF99;
+	border-radius: 5px;
+	color: #000;
+}
+
+.frame {
+	position: fixed;
+	top: 19%;
+	/* Ajustez la position verticale pour la baisser légèrement */
+	left: 50%;
+	/* Recentrez horizontalement */
+	transform: translateX(-50%);
+	/* Recentrez horizontalement */
+	width: 60%;
+	/* Conservez la largeur actuelle */
+	height: 75%;
+	/* Conservez la hauteur actuelle */
+	background-color: rgba(255, 255, 255, 0.95);
+	border-radius: 20px;
+	display: flex;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+	z-index: 5;
+	overflow: hidden;
+}
+
+.tab-container {
+	width: 25%;
+	background-color: #f5f5f5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	padding: 20px;
+	gap: 20px;
+	border-right: 3px solid #CCC;
+}
+
+.tab {
+	width: 100%;
+	text-align: center;
+	padding: 20px 0;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.3s;
+	border-radius: 10px;
+	color: #333;
+	background-color: #e7e7e7;
+	font-weight: 700;
+	border-bottom:
+		2px solid #DDD;
+	text-decoration: none;
+	/* Ajoutez cette ligne pour enlever le soulignement */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.tab.active {
+	background-color: #000000;
+	color: #FFF;
+	box-shadow: none;
+}
+
+.tab:hover {
+	background-color: #F0F0F0;
+	transform: translateY(-5px);
+}
+
+.profile-section {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: #FFFFFF;  /* Fond blanc pur */
+}
+
+.profile-pic {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);  /* Ombre douce sous la photo de profil */
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: 70px;
+    object-fit: cover;
+}
+
+.profile-name {
+	font-size: 28px;
+	margin-top: 0px;
+	/* Ajout pour contrôler l'espacement au-dessus du nom d'utilisateur */
+	margin-bottom: 7px;
+	/* Ajustez selon besoin */
+	color: #333;
+	font-weight: 800;
+}
+
+.statistic {
+	font-size: 20px;
+	color: #666;
+	margin: 5px 0;
+}
+
+.GameHistory {
+	font-size: 20px;
+	color: #444;
+	margin: 1px 0;
+	font-weight: 700;
+}
+
+.statistic span {
+	font-weight: 700;
+	color: #000;
+}
+
+.upload-btn-wrapper {
+	margin-bottom: 20px;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.upload-btn-wrapper input[type="file"] {
+	font-size: 100px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+}
+
+.progress-bar {
+	display: block;
+	height: 25px;
+	background-color: #4CAF50;
+	border-radius: 12px;
+	text-align: center;
+	line-height: 25px;
+	color: white;
+	margin-top: 15px;
+}
+
+.game-button {
+	color: #FFFFE0;
+	background-color: transparent;
+}
+
+.game-button:hover {
+	background-color: #444;
+}
+
+
+.separation-hr {
+    border-color: #cccccc;
+    border-width: 1.5px;
+	width: 100%;
+  }
+
+
+
+.scroll-container {
+	/* height: 200px; Hauteur de la zone avec barre de défilement */
+	overflow-y: auto; /* Active la barre de défilement verticale si nécessaire */
+	overflow-x: hidden;
+	border: 1px solid #CCCCCC; /* Bordure pour la zone */
+	width: 100%;
+}
+  
+  /* Style pour la liste */
+  .scroll-container ul {
+	list-style-type: none; /* Retire les puces de liste */
+	padding: 0;
+  }
+  
+  /* Style pour les éléments de la liste */
+  .scroll-container li {
+	padding: 10px;
+	border-bottom: 1px solid #EEEEEE; /* Bordure entre les éléments */
+  }
+  
+  /* Style pour la barre de défilement si nécessaire */
+  .scroll-container::-webkit-scrollbar {
+	width: 8px; /* Largeur de la barre de défilement */
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb {
+	background-color: #888888; /* Couleur de la barre de défilement */
+  }
+  .scroll-container table {
+	width:95%;
+	border-collapse: collapse;
+  }
+  
+  .scroll-container th, .scroll-container td {
+	border: 1px solid #EEEEEE;
+	padding: 8px;
+	text-align: left;
+  }
+  
+  .scroll-container th {
+	background-color: #f2f2f2;
+  }
+
+
+
+/* CSS pour les écrans de taille moyenne */
+@media (max-width: 768px) {
+	header div {
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: center;
+	}
+  
+	header a.header-btn, header a.game-button {
+	  font-size: 18px; /* Réduction de la taille de la police */
+	  padding: 8px 10px; /* Réduction du padding */
+	  margin: 2px; /* Ajout de marges pour éviter le chevauchement */
+	}
+  }
+  
+  /* CSS pour les écrans de petite taille */
+  @media (max-width: 480px) {
+	header div {
+	  flex-direction: column;
+	  align-items: center;
+	}
+  
+	header a.header-btn, header a.game-button {
+	  width: 100%; /* Utilise toute la largeur disponible */
+	  text-align: center; /* Centre le texte dans le bouton */
+	  margin-bottom: 5px; /* Espacement entre les boutons */
+	}
+  }

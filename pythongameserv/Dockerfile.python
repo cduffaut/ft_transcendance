@@ -1,0 +1,18 @@
+# Utilise l'image Python officielle comme base
+FROM python:3.9
+
+# Définis le répertoire de travail dans le conteneur
+RUN rm -rf app
+RUN mkdir /app
+WORKDIR /app
+
+# Copie les fichiers requis dans le conteneur
+COPY GameServer /app
+
+# Installe les dépendances Python
+# RUN pip3 install -r ./app/requirements.txt
+RUN pip3 install websockets
+
+
+# Commande par défaut à exécuter lorsque le conteneur démarre
+CMD ["python", "wsManager.py"]

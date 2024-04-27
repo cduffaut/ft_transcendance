@@ -1,0 +1,81 @@
+body,
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("https://e1.pxfuel.com/desktop-wallpaper/281/253/desktop-wallpaper-best-6-80s-backgrounds-on-hip-retro-80s.jpg");
+	background-size: cover;
+	background-position: center;
+	filter: grayscale(100%);
+	z-index: -1;
+}
+
+.forgot-password-frame {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    padding: 20px; /* Padding existant pour tous les côtés */
+    padding-bottom: 40px; /* Augmente spécifiquement le padding au bas */
+    background-color: rgba(232, 224, 224, 0.852);
+    border-radius: 8px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+}
+
+.forgot-password-frame h2 {
+	color: #494444;
+	margin-bottom: 5px;
+	width: 100%;
+	font-size: 60px;
+	font-family: 'Poppins', sans-serif;
+}
+
+.forgot-password-frame label {
+	display: block;
+	margin-bottom: 10px;
+	color: #494444;
+	width: 100%;
+	font-size: 40px;
+	font-family: 'Poppins', sans-serif;
+}
+
+.button {
+    padding: 12px 24px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: inline-block;
+    transform: scale(1.5);
+    margin-top: 20px !important;
+}
+
+.button:hover, .button:focus {
+    background-color: #45a049;
+    transform: scale(1.5) translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    text-decoration: none;
+}
+

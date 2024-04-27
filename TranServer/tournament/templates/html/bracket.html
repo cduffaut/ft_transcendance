@@ -1,0 +1,28 @@
+{% extends 'html/header.html' %}
+{% load static %}
+
+{% block content %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'bracket.css' %}">
+
+<div id="content-container-replace">
+	<div class="bracket-container">
+		<div class="background-filter"></div> <!-- Div pour le filtre de l'image de fond -->
+		<div class="join-button" id="join-button">
+			<a href="" id="join-button" class="join-button-a">JOIN TOURNAMENT</a>
+		</div>
+
+		<div data-tournamentSize="{{ tournamentSize|safe }}" id="tour_size"> </div>
+		<div data-myUser="{{ username|safe}}" id="myUser"></div>
+		<div class="theme theme-dark">
+			<div class="bracket" id="tournamentBracket"></div>
+		</div>
+		<!-- <script type="module" src="{% static 'js/match.js' %}"></script> -->
+		<script src="{% static 'utils.js' %}"></script>
+		<script src="{% static 'js/bracket.js' %}"></script>
+	</div>
+</div>
+
+{% endblock %}

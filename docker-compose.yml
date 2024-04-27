@@ -1,0 +1,104 @@
+version: '3.9'
+
+services:
+
+  postgresql:
+    container_name: postgresql
+    networks:
+        - Transcendence
+    image: postgres
+    restart: always
+    env_file:
+     - .env
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 2s
+      timeout: 2s
+      retries: 10
+
+  adminer:
+    container_name: postgre_adminer
+    networks:
+        - Transcendence
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  django:
+    container_name: django
+    networks:
+        - Transcendence
+    build: 
+      context: .
+      dockerfile: ./Django/Dockerfile.django  # Assure-toi d'avoir un Dockerfile pour Django
+    ports:
+      - 8000:8000
+    volumes:
+      - ./TranServer:/app  # Montage du répertoire du projet Django dans le conteneur
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    env_file:
+     - .env
+    stop_grace_period: 2s
+
+  daphne:
+    container_name: daphne
+    networks:
+        - Transcendence
+    build: 
+      context: .
+      dockerfile: ./Daphne/Dockerfile.daphne  # Assure-toi d'avoir un Dockerfile pour Django
+    ports:
+      - 8002:8002
+    volumes:
+      - ./TranServer:/app  # Montage du répertoire du projet Django dans le conteneur
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    env_file:
+     - .env
+    stop_grace_period: 2s
+
+  nginx:
+    container_name: nginx
+    networks:
+        - Transcendence
+    volumes:
+      - ./static:/static
+    build: 
+      context: .
+      dockerfile: ./nginx/Dockerfile.nginx
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - django
+  
+  pythongameserv:
+    container_name: pythongameserv
+    networks:
+        - Transcendence
+    build: 
+      context: .
+      dockerfile: pythongameserv/Dockerfile.python
+    ports:
+      - 8001:8001
+    stop_grace_period: 2s
+  
+  redis:
+    container_name: redis
+    networks:
+      - Transcendence
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+
+
+networks:
+    Transcendence:
+        driver: bridge

@@ -1,0 +1,20 @@
+# Utilisez l'image officielle Nginx
+FROM nginx
+
+# Supprimez la configuration par défaut de Nginx
+RUN rm /etc/nginx/conf.d/default.conf
+
+RUN mkdir -p /etc/nginx/ssl/
+
+# Copiez votre configuration Nginx personnalisée
+COPY nginx/conf/nginx.conf /etc/nginx/conf.d/nginx.conf
+
+RUN openssl genpkey -algorithm RSA -out /etc/nginx/ssl/nginx.key && openssl req -new -key /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.csr -subj "/C=CH/ST=VD/L=Lausanne/O=42/OU=42/CN=127.0.0.1/emailAddress=pudry@student.42lausanne.ch" && openssl x509 -req -days 365 -in /etc/nginx/ssl/nginx.csr -signkey /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
+# RUN openssl req -x509 -nodes -out /etc/nginx/ssl/nginx.crt -keyout /etc/nginx/ssl/nginx.key -subj "/C=CH/ST=VD/L=Lausanne/O=42/OU=42/CN=127.0.0.1/emailAddress=pudry@student.42lausanne.ch"
+
+
+# Exposez les ports 80 et 443
+EXPOSE 443
+
+# Commande par défaut pour démarrer Nginx
+CMD ["nginx", "-g", "daemon off;"]

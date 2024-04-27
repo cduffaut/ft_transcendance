@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <title>Connect to your account</title>
+</head>
+<body>
+    <div id="content-container-replace">
+        <link rel="stylesheet" href="{% static 'email_validated.css' %}">
+        <div class="forgot-password-frame">
+            <h2>Your email has been validated!</h2>
+            <label>Log in by clicking just below...</label>
+            <a href="{% url 'user_logout' %}" class="button">Join</a>
+        </div>
+    </div>
+    <script src="{% static 'utils.js' %}"></script>
+</body>
+</html>

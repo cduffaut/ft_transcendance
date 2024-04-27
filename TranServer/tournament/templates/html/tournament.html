@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament - settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'tournament.css' %}">
+</head>
+
+<body>
+    <div id="content-container-replace">
+        <div class="vignette"></div>
+        <div class="blur-background"></div>
+        <header>
+            <h1><a href="{% url 'home_page' %}" class="logo">TRANSCENDANCE</a></h1>
+            <nav class="additional-links">
+                <ul>
+                    <li><a href="{% url 'home_page' %}" class="game-button">GAME</a></li>
+                    <li><a href="{% url 'user_login' %}" class="logout">LOGOUT</a></li>
+                    <li><a href="{% url 'general_chat' %}" class="chat">CHAT</a></li>
+                    <li><a href="{% url 'user_dashboard' %}" class="profile">PROFILE</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div class="title-container">
+                <h2>Tournament Settings</h2>
+            </div>
+            <div class="separator-line"></div>
+
+            <div class="parameters-container">
+                <div class="settings-column">
+                    <div class="select-text">
+                        <div class="parameter-name"><strong>Ball Width:</strong></div>
+                        <div class="control">
+                            <input type="range" id="ballwidth" name="ballwidth" min="5" max="30" step="5" value="10">
+                            <span id="ballwidth-value">10</span>
+                        </div>
+                    </div>
+                    <div class="select-text">
+                        <div class="parameter-name"><strong>Speed:</strong></div>
+                        <div class="control">
+                            <input type="range" id="speed" name="speed" min="0.5" max="3" step="0.5" value="1">
+                            <span id="speed-value">1</span>
+                        </div>
+                    </div>
+                    <div class="select-text">
+                        <div class="parameter-name"><strong>Win Point:</strong></div>
+                        <div class="control">
+                            <input type="range" id="winpoint" name="winpoint" min="3" max="15" step="1" value="5">
+                            <span id="winpoint-value">5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-column">
+                    <div class="select-text">
+                        <div class="parameter-name"><strong>Plank Size:</strong></div>
+                        <div class="control">
+                            <input type="range" id="planksize" name="planksize" min="10" max="40" step="5" value="20">
+                            <span id="planksize-value">20</span>
+                        </div>
+                    </div>
+                    <div class="select-text">
+                        <div class="parameter-name"><strong>Acceleration:</strong></div>
+                        <div class="control">
+                            <input type="range" id="acceleration" name="acceleration" min="0" max="10" step="1"
+                                value="0">
+                            <span id="acceleration-value">0</span>
+                        </div>
+                    </div>
+                    <div class="select-text">
+                        <div class="parameter-name"><strong>Game Mode:</strong></div>
+                        <div class="control">
+                            <select id="gamesettings">
+                                <option value="" disabled selected>Select Game Mode</option>
+                                <option value="2">Two Players</option>
+                                <option value="4">Four Players</option>
+                                <option value="0">Mix</option>
+                            </select>
+                        </div>
+                    </div>                   
+                    <div class="select-text">
+                        <div class="parameter-name"><strong>Player Amount:</strong></div>
+                        <div class="control">
+                            <select id="playerNumber">
+                                <option value="" disabled selected>Select Player Amount</option>
+
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="create-button" disabled>Create</button>
+                <a href="{% url 'home_page' %}" class="exit-link">Exit</a>
+            </div>
+        </div>
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h3>Invite players to the game !</h3>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <button type="button"  id="searchBtn">Search</button>
+                </div>
+                <div id="searchResult" class="search-result" style="display: none;">
+                </div>
+
+                <div class="users-and-invited-container">
+                    <div class="user-container">
+                        <h4 class="title-outside">User list</h4>
+                        <div class="user-list-container" id="user-list">
+                        </div>
+                    </div>
+                    <div class="invited-container">
+                        <h4 class="title-outside">Invited Users</h4>
+                        <div class="user-list-container" id="invitedUsers">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="start-button-container">
+                    <button class="start-button">Start</button>
+                </div>
+            </div>
+        </div>
+        <script src="{% static 'utils.js' %}"></script>
+        <script src="{% static 'js/tournament.js' %}"></script>
+    </div>
+    </div>
+</body>
+
+</html>

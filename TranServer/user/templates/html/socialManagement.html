@@ -1,0 +1,52 @@
+{% extends 'html/header.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'socialManagement.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+<div class="frame">
+    <div class="tab-container">
+        <div class="tab"><a id="accountInfoLink" href="{% url 'account_information' %}">Account Information</a></div>
+        <div class="tab"><a href="{% url 'user_dashboard' %}" style="color: #000000;">Dashboard</a></div>
+        <div class="tab active"><a href="{% url 'social_management' %}" style="color: #ffffff;">Social Management</a>
+        </div>
+    </div>
+    <div class="content-area">
+        <div class="search-area">
+            <div class="search-selection">
+                <input type="text" placeholder="Search a user..." class="search-box">
+            </div>
+            <button type="button" id="invite_btn">Invite</button>
+            <button type="button" id="block_btn">Block</button>
+        </div>
+        <p id="error_message" style="display: none;"></p>
+        <div class="sections-container">
+            <section class="friends-section">
+                <h3>Friends</h3>
+                <ul class="user-list friends-list">
+                </ul>
+            </section>
+            <section class="pending-section">
+                <h3>Pending Requests</h3>
+                <ul class="user-list pending-list">
+                </ul>
+            </section>
+            <section class="blocked-section">
+                <h3>Blocked Users</h3>
+                <ul class="user-list blocked-list">
+                </ul>
+            </section>
+            <section class="waiting-approval-section">
+                <h3>Waiting for Approval</h3>
+                <ul class="user-list waiting-approval-list">
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src={% static 'utils.js' %}></script>
+    <script src={% static 'socialManagement.js' %}></script>
+</div>
+
+{% endblock %}

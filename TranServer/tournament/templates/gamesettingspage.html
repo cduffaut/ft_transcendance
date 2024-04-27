@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Game - launching</title>
+</head>
+<style>
+  body {
+    background-color: #303030;
+    color: #cccccc;
+  }
+</style>
+<body>
+  <form action="" method="post">
+    {% csrf_token %}
+    <label for="ballwidth">ballwidth:</label>
+    <input type="text" id="ballwidth" name="ballwidth" value="5">
+    <p> Slider, value 5-30 </p><br><br>
+    <label for="planksize">planksize:</label>
+    <input type="text" id="planksize" name="planksize" value="20">
+    <p> Slider, value 10-40 </p><br><br>
+    <label for="Speed">Speed:</label>
+    <input type="text" id="Speed" name="Speed" value="1">
+    <p> Slider, value 0.5 - 3 </p><br><br>
+    <label for="acceleration">acceleration:</label>
+    <input type="text" id="acceleration" name="acceleration" value="5">
+    <p> Slider 0 - 10 </p><br><br>
+    <label for="winpoint">winpoint:</label>
+    <input type="text" id="winpoint" name="winpoint" value="3">
+    <p> Slider 3 - 15 </p><br><br>
+    <label for="gamesettings">gamesettingsv:</label>
+    <input type="text" id="gamesettings" name="gamesettings" value="2">
+    <p>0 mix, 2 2p, 4 4p</p><br><br>
+    <label for="playerNumber">playerNumber:</label>
+    <input type="text" id="playerNumber" name="playerNumber" value="4">
+    <p>playerNumber</p><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

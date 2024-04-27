@@ -1,0 +1,331 @@
+header h1 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 60px;
+  /* Taille de police deux fois plus grande */
+}
+
+header h1 a {
+  text-decoration: none;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  /* Ajoute une ombre */
+  color: #FFFF99;
+  /* Couleur jaune clair pastel fluo */
+}
+
+nav ul li:last-child {
+  width: 120px;
+  /* Limite la largeur du dernier élément */
+  overflow: hidden;
+  /* Cache le texte dépassant la largeur de l'élément */
+  white-space: nowrap;
+  /* Empêche le texte de se mettre à la ligne */
+  text-overflow: ellipsis;
+  /* Ajoute des points de suspension pour indiquer que du texte est masqué */
+}
+
+.additional-links ul {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  /* Ajoute une marge à gauche pour aligner les liens avec Transcendence */
+}
+
+#background-video {
+  position: fixed;
+  /* Changez de 'absolute' à 'fixed' pour couvrir tout l'écran */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* S'assure que la vidéo couvre la zone disponible sans perdre les proportions */
+  z-index: -1;
+  /* Assurez-vous que la vidéo reste en arrière-plan */
+  overflow: hidden;
+  /* Masque la barre de défilement */
+  opacity: 0.9;
+}
+
+#background-video::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, rgba(0, 0, 0, 0.8), transparent),
+    radial-gradient(circle at top right, rgba(0, 0, 0, 0.8), transparent),
+    radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.8), transparent),
+    radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.8), transparent);
+  z-index: 1;
+  /* Place le dégradé au-dessus de la vidéo */
+}
+
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
+}
+
+body,
+html {
+  height: 100%;
+  /* Assure que la taille du corps et de html prend tout l'écran */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* Ajoutez ceci pour supprimer la barre de défilement sur tout le corps si nécessaire */
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.596);
+  color: #FFFFE0;
+  z-index: 10;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-btn {
+  color: #FFFFE0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.profile-btn {
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  /* Couleur du texte en blanc */
+  text-decoration: none;
+  /* Enlève le soulignement */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  margin-right: 20px;
+  /* Ajoute un espace à droite de la liste */
+}
+
+nav ul li:first-child {
+  margin-right: auto;
+  /* Déplace le premier élément vers la gauche */
+}
+
+nav ul li {
+  width: auto;
+  /* Réinitialise la largeur pour s'adapter au contenu */
+}
+
+nav ul li:not(:first-child) {
+  margin-left: 10px;
+  /* Ajoute une marge de 10px à gauche pour espacer les éléments */
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  overflow: hidden;
+  /* Cache le texte dépassant la largeur de l'élément */
+  white-space: nowrap;
+  /* Empêche le texte de se mettre à la ligne */
+  text-overflow: ellipsis;
+  /* Ajoute des points de suspension pour indiquer que du texte est masqué */
+  font-family: 'Roboto', sans-serif;
+  /* Changer la police */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  /* Ajoute une ombre */
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 60px);
+  position: relative;
+  /* Ajoutez cette ligne pour que la vidéo soit positionnée relativement */
+}
+
+.menu {
+  display: flex;
+  /* Affichage en flex pour aligner les boutons */
+  flex-direction: column;
+  /* Les boutons sont empilés verticalement */
+  align-items: center;
+  /* Centre les boutons horizontalement */
+  margin-top: 300px;
+  /* Augmente la marge supérieure pour les éloigner du haut */
+}
+
+.menu button {
+  font-size: 100px;
+  padding: 40px 80px;
+  background-color: #FFFF99;
+  /* Couleur de fond jaune pâle fluo */
+  border: none;
+  margin: 30px auto;
+  /* Marge autour des boutons */
+  border-radius: 60px;
+  /* Coins arrondis */
+  text-transform: uppercase;
+  width: auto;
+  /* Ajuste la largeur automatiquement selon le contenu */
+  font-weight: bold;
+  width: 1000px;
+  /* Largeur fixe pour tous les boutons */
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  color: #000;
+  /* Couleur du texte */
+  text-decoration: none;
+  /* Enlève le soulignement */
+}
+
+.menu button:hover {
+  background-color: #ffff0c;
+  transform: scale(1.1);
+  color: #FFFFE0;
+  /* Couleur du texte au survol */
+}
+
+.menu button.large {
+  font-size: 60px;
+  padding: 30px 60px;
+  border-radius: 20px;
+  width: 120%;
+}
+
+.menu button.small {
+  font-size: 40px;
+  padding: 15px 30px;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.menu button a {
+  color: rgb(0, 0, 0);
+  /* Change la couleur du texte en blanc */
+  text-decoration: none;
+  /* Enlève le soulignement */
+  text-transform: uppercase;
+  /* Met le texte en majuscules */
+  font-family: 'Roboto', sans-serif;
+  /* Utilise la police Roboto */
+}
+
+.logo {
+  text-decoration: none;
+  color: #FFFF99;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.header-btn {
+  color: #ffffff;
+  /* Assure la couleur du texte en blanc */
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  /* Taille de police standard pour les boutons */
+  cursor: pointer;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  /* Supprime le soulignement */
+}
+
+header a.header-btn:hover {
+  background-color: #444 !important;
+  color: white !important;
+  border-radius: 5px;
+}
+
+
+.game-button {
+  display: inline-block;
+  /* Pour permettre l'ajustement de padding et autres styles de bloc */
+  padding: 12px 20px;
+  /* Ajustez selon vos besoins */
+  background-color: #FFFF99;
+  /* Jaune clair pastel fluo, comme vos autres éléments jaunes */
+  color: #000;
+  /* Couleur du texte, noir pour contraste */
+  text-transform: uppercase;
+  /* Texte en majuscules */
+  text-decoration: none;
+  /* Supprime le soulignement par défaut des liens */
+  font-family: 'Roboto', sans-serif;
+  /* Uniformité de la police avec le reste du site */
+  font-size: 20px;
+  /* Taille de la police */
+  border-radius: 5px;
+  /* Coins arrondis */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* Ombre légère pour un effet 3D */
+  transition: background-color 0.3s, color 0.3s;
+  /* Transition pour hover */
+}
+
+/* CSS pour les écrans de taille moyenne */
+@media (max-width: 768px) {
+  header div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  header a.header-btn,
+  header a.game-button {
+    font-size: 18px;
+    /* Réduction de la taille de la police */
+    padding: 8px 10px;
+    /* Réduction du padding */
+    margin: 2px;
+    /* Ajout de marges pour éviter le chevauchement */
+  }
+}
+
+/* CSS pour les écrans de petite taille */
+@media (max-width: 480px) {
+  header div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header a.header-btn,
+  header a.game-button {
+    width: 100%;
+    /* Utilise toute la largeur disponible */
+    text-align: center;
+    /* Centre le texte dans le bouton */
+    margin-bottom: 5px;
+    /* Espacement entre les boutons */
+  }
+}

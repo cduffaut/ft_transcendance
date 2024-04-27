@@ -1,0 +1,128 @@
+{% extends "html/header.html" %}
+
+{% load static %}
+
+{% block content %}
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css" />
+<link rel="stylesheet" href="{% static 'home.css' %}">
+<link rel="stylesheet" href="{% static 'accountInformation.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+
+
+<div class="image-container">
+    <img src="https://e1.pxfuel.com/desktop-wallpaper/281/253/desktop-wallpaper-best-6-80s-backgrounds-on-hip-retro-80s.jpg"
+        alt="Votre image" style="width:100%; height:100%; object-fit: cover;">
+</div>
+<div class="frame">
+    <div class="tab-container">
+        <a href="{% url 'account_information' %}" class="tab account-info-btn">Account Information</a>
+        <a href="{% url 'user_dashboard' %}" class="tab active">Dashboard</a>
+        <a href="{% url 'social_management' %}" class="tab">Social Management</a>
+    </div>
+    <div class="content-area">
+        <div class="profile-section">
+            <img alt="Photo de profil" class="profile-pic" id="profile-pic">
+            <div class="button-container">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" id="profilePicture" name="profile_picture" accept="image/*"
+                           style="display: none;" onchange="submitForm()">
+                    <label for="profilePicture" class="file-button">Choose a File</label>
+                </form>
+            </div>
+        </div>
+
+        <div class="user-info">
+            <form id="updateInfoForm">
+                {% csrf_token %}
+                <div class="form-row">
+                    <label for="username" class="form-label">Username:</label>
+                    <input type="text" id="username" name="username" value="{{ user.username }}" required
+                        class="form-input">
+                </div>
+                <div class="form-row">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" value="{{ user.email }}" required class="form-input">
+                </div>
+                <div class="form-row">
+                    <div style="flex: 0 0 140px;"></div> <!-- This spacer div takes up the label width -->
+                    <button type="submit" id="update_profile" class="form-button">Update Profile</button>
+                </div>
+            </form>
+
+            <form id="passwordChangeForm">
+                {% csrf_token %}
+                <div class="form-row">
+                    <label for="oldPassword" class="form-label">Old Password:</label>
+                    <input type="password" id="oldPassword" name="old_password" required class="form-input"><br><br>
+                </div>
+                <div class="form-row">
+                    <label for="newPassword" class="form-label">New Password:</label>
+                    <input type="password" id="newPassword" name="new_password" required class="form-input"><br><br>
+                </div>
+                <div class="form-row">
+                    <div style="flex: 0 0 140px;"></div>
+                    <button type="submit" class="form-button">Change Password</button>
+                </div>
+                <p id="passwordSuccess" style="display: none;"></p>
+                <p id="passwordError" style="display: none;"></p>
+            </form>
+
+            <p id="passwordError" style="color: red; font-style: italic; display: none; font-size: 14px;">Incorrect
+                current password</p>
+
+            <hr> <!-- Barre horizontale -->
+
+            <div class="color-settings">
+                <div class="game-settings-title">
+                    <h2>Game color customisation</h2>
+                </div>
+                <div class="color-picker-columns">
+                    <div class="color-picker">
+                        <label for="BallColor">Ball:</label>
+                        <button class="button-8" id="BallColor" onclick="openColorPicker('BallColor')">
+                            <i class="fa fa-paint-brush"></i> Select Ball Color
+                        </button>
+                    </div>
+                    <div class="color-picker">
+                        <label for="EnemyPaddleColor">Enemy Paddle:</label>
+                        <button class="button-8" id="EnemyPaddleColor" onclick="openColorPicker('EnemyPaddleColor')">
+                            <i class="fa fa-paint-brush"></i> Select Enemy Paddle Color
+                        </button>
+                    </div>
+                    <div class="color-picker">
+                        <label for="CadreColor">Frame:</label>
+                        <button class="button-8" id="CadreColor" onclick="openColorPicker('CadreColor')">
+                            <i class="fa fa-paint-brush"></i> Select Frame Color
+                        </button>
+                    </div>
+                    <div class="color-picker">
+                        <label for="MyPaddleColor">My Paddle:</label>
+                        <button class="button-8" id="MyPaddleColor" onclick="openColorPicker('MyPaddleColor')">
+                            <i class="fa fa-paint-brush"></i> Select My Paddle Color
+                        </button>
+                    </div>
+                    <div class="color-picker">
+                        <label for="BgColor">Background:</label>
+                        <button class="button-8" id="BgColor" onclick="openColorPicker('BgColor')">
+                            <i class="fa fa-paint-brush"></i> Select Background Color
+                        </button>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button id="color_btn" class="edit-link">Edit Colors</button>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <script src={% static 'utils.js' %}></script>
+    <script src={% static 'accountInformation.js' %}></script>
+</div>
+{% endblock %}

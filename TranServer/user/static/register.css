@@ -1,0 +1,300 @@
+html,
+body {
+    height: 100%;
+    /* Assure que le body prend toute la hauteur de la fenêtre */
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    /* Ajoutez cette ligne pour s'assurer que le positionnement relatif est défini */
+}
+
+/* Image de fond avec effet noir et blanc */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://e1.pxfuel.com/desktop-wallpaper/281/253/desktop-wallpaper-best-6-80s-backgrounds-on-hip-retro-80s.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    z-index: -1;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* Ajusté pour plus de padding autour */
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    /* Utiliser Roboto pour tout le header */
+    text-transform: uppercase;
+}
+
+/* Pour tous les liens dans le header */
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    /* Taille de police maintenue */
+    font-family: 'Roboto', sans-serif;
+    /* Assurer Roboto pour tous les liens */
+    padding: 10px 15px;
+    /* Ajusté pour plus de padding autour des liens */
+    margin: 0 10px;
+    /* Espacement entre les liens */
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.logo {
+    text-decoration: none;
+    color: #FFFF99;
+    /* Couleur jaune pale fluo */
+    font-size: 50px;
+}
+
+/* Styles pour les éléments de texte du header */
+header a,
+header li {
+    font-size: 25px;
+    /* Taille de police souhaitée */
+}
+
+/* Contenu */
+.content {
+    position: relative;
+    padding: 50px;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+}
+
+.title-container {
+    margin-bottom: 40px;
+}
+
+.title-container h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 60px;
+    margin: 0;
+}
+
+.separator-line {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    margin: 20px 0;
+}
+
+.select-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.select-text select,
+.select-text .slider {
+    margin: 0 10px;
+    font-size: 18px;
+    background-color: #FFFF99;
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: black;
+}
+
+.slider {
+    width: 50%;
+}
+
+.create-button {
+    padding: 20px 25px;
+    background-color: #FFFF99;
+    color: #333;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.create-button:hover,
+.create-button:focus {
+    background-color: #cccc00;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.exit-link {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#login-container {
+    position: absolute;
+    /* Positionnement absolu pour permettre le centrage */
+    top: 50%;
+    /* Centre verticalement */
+    left: 50%;
+    /* Centre horizontalement */
+    transform: translate(-50%, -50%);
+    /* Compense pour le positionnement au centre exact */
+    max-width: 800px;
+    /* Largeur maximale pour plus de largeur */
+    width: 20%;
+    /* Utiliser une largeur relative pour la réactivité */
+    height: 50vh;
+    /* Augmenter la hauteur à 70% de la hauteur de la vue */
+    padding: 40px;
+    /* Padding intérieur pour plus d'espace autour des éléments */
+    border: 2px solid #000;
+    /* Bordure visible */
+    border-radius: 15px;
+    /* Rayon de la bordure pour des coins arrondis */
+    background-color: #3030309a;
+    /* Couleur de fond avec transparence */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    /* Ombre pour un effet de profondeur */
+    display: flex;
+    /* Utilisation de Flexbox pour un alignement interne optimal */
+    justify-content: center;
+    /* Alignement horizontal des contenus */
+    align-items: center;
+    /* Alignement vertical des contenus */
+    flex-direction: column;
+    /* Les éléments internes sont arrangés en colonne */
+    color: rgb(234, 230, 230);
+    /* Couleur du texte */
+    font-weight: bold;
+    /* Texte en gras pour une meilleure visibilité */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    /* Ombre du texte pour un effet de profondeur */
+}
+
+.split-text {
+    margin-bottom: 15px;
+    /* Réduction de l'espace entre les éléments */
+}
+
+.split-text span {
+    display: block;
+    text-align: center;
+}
+
+.welcome-text {
+    font-size: 40px;
+    /* Réduction de la taille du texte de bienvenue */
+}
+
+.split-text span:not(.welcome-text) {
+    font-size: 50px;
+    /* Réduction de la taille des autres textes */
+}
+
+#login-container form {
+    width: 100%;
+    max-width: 400px;
+    /* Largeur maximale du formulaire */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-container form input[type="email"] {
+    width: calc(100% - 40px);
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+    width: calc(100% - 40px);
+    padding: 12px;
+    /* Réduction du padding */
+    margin: 8px 0;
+    /* Réduction de la marge */
+    box-sizing: border-box;
+    font-size: 16px;
+    /* Réduction de la taille de la police */
+    border-radius: 5px;
+}
+
+button {
+    background-color: #FFFF99;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    margin-top: 20px;
+    /* Réduction de la marge supérieure */
+}
+
+button:hover,
+button:focus {
+    background-color: #e7e735;
+    transform: scale(1.1);
+}
+
+/* Pour le lien "Already have an account? Login here" */
+#register-link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    font-weight: normal;
+    font-family: 'Arial', sans-serif;
+    /* Changer la police d'écriture */
+}
+
+/* Pour les éléments "TRANSCENDANCE" et "PROFILE" */
+.logo,
+.profile {
+    margin-left: 10px;
+    /* Décaler TRANSCENDANCE du bord gauche */
+    margin-right: 10px;
+    /* Décaler PROFILE du bord droit */
+}
+
+#error-message {
+    color: #ffff65;
+    /* Jaune pâle fluo */
+    font-style: italic;
+    /* Italique */
+    margin-top: 20px;
+    /* Espace au-dessus du message */
+    text-align: center;
+    /* Centrage du texte */
+    font-family: 'Arial', sans-serif;
+    /* Utiliser Arial */
+}
+
+input#id_username {
+    margin-top: 40px;
+    /* Espace ajouté au-dessus du champ Username */
+}

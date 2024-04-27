@@ -1,0 +1,18 @@
+{% extends 'monapp/base.html' %}
+
+{% block content %}
+<h2>Dashboard</h2>
+<p>Nombre de victoires : {{ user.nombre_victoires }}</p>
+<p>Nombre de défaites : {{ user.nombre_defaites }}</p>
+
+<h3>Historique des résultats :</h3>
+<ul>
+    {% for match in user.historique_resultats %}
+        <li>
+            Victoire {{ match.0 }} à {{ match.1 }} contre
+            <a href="{% url 'profile' username=match.2 %}">{{ match.2 }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

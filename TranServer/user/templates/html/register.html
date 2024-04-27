@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register</title>
+  <link rel="stylesheet" href="{% static 'register.css' %}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="content-container-replace">
+    <header>
+      <h1><a href="{% url 'home_page' %}" class="logo">TRANSCENDANCE</a></h1>
+    </header>
+    <div id="login-container">
+      <div class="split-text">
+        <span class="welcome-text">Welcome!</span>
+        <span>Please register</span>
+      </div>
+      <form method="post" id="signupForm">
+        {% csrf_token %}
+        <input type="text" placeholder="Username" required id="id_username" />
+        <input type="email" placeholder="Mail" required id="id_email" />
+        <input type="password" placeholder="Password" required id="id_password1" />
+        <input type="password" placeholder="Confirm Password" required id="id_password2" />
+        <button type="submit">Register</button>
+      </form>
+      <a href="{% url 'user_login' %}" id="register-link">Already have an account? Login here</a>
+      <div id="error-message" style="display: none;"></div>
+    </div>
+    <script src="{% static 'utils.js' %}"></script>
+    <script src="{% static 'register.js' %}"></script>
+  </div>
+</body>
+
+</html>

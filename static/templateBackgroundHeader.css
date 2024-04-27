@@ -1,0 +1,68 @@
+body {
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f0f0f0;
+}
+
+.vignette {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
+}
+
+.image-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: grayscale(100%);
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.596);
+	color: #FFFFE0;
+	z-index: 10;
+	padding: 20px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header a {
+	color: #FFFFE0;
+	/* Maintient la couleur des liens */
+	text-decoration: none;
+	/* Enlève le soulignement */
+	font-size: 30px;
+	/* Taille des liens */
+	margin: 0 10px;
+	/* Ajoute de l'espacement autour des liens */
+}
+
+h1.logo a {
+	text-transform: uppercase;
+	/* Met le texte en majuscules */
+	color: #FFFF99;
+	/* Jaune pâle fluo */
+	font-size: 48px;
+	/* Augmente la taille pour "Transcendance" */
+	text-decoration: none;
+	/* Enlève le soulignement */
+}

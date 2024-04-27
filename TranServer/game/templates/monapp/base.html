@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Application Django</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Tu peux ajouter ici d'autres fichiers CSS ou des balises <link> -->
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur Mon Application Django</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Accueil</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Déconnexion</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Connexion</a></li>
+                    <li><a href="{% url 'signup' %}">Inscription</a></li>
+                {% endif %}
+                <!-- Ajoute ici d'autres liens si nécessaire -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mon Application Django. Tous droits réservés.</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- Tu peux ajouter ici d'autres fichiers JavaScript ou des balises <script> -->
+</body>
+</html>

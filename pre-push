@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Chemin absolu du répertoire du dépôt Git
+REPO_DIR=$(git rev-parse --show-toplevel)
+
+# Exécute le Makefile dans le répertoire du dépôt
+make -C "$REPO_DIR" 
+
+# Vérifie le code de retour de make
+if [ $? -ne 0 ]; then
+    echo "Erreur lors de la tentative de push. Veuillez la corriger. As tu demarrer docker avant de push?"
+    exit 1
+fi
+
+exit 0

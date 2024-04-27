@@ -1,0 +1,9 @@
+{% extends 'monapp/base.html' %}
+
+{% block content %}
+<h1>Profil de {{ user_profil.username }}</h1>
+
+<!-- Ajoute ici d'autres informations que tu souhaites afficher sur l'utilisateur -->
+<p>Email: {{ user_profil.email }}</p>
+
+{% endblock %}
